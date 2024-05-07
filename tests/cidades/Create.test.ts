@@ -13,6 +13,6 @@ describe('Cidades - Create', () =>{
     const res1 = await testServer.post('/cidades').send({nome: 'Ca'});
 
     expect(res1.statusCode).toEqual(StatusCodes.BAD_REQUEST);
-    expect(res1.body).toEqual('errors.body.nome');
+    expect(res1.body).toHaveProperty('errors.body.nome');
   });
 });
